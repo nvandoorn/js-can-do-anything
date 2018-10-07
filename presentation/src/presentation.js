@@ -1,5 +1,5 @@
 // Import React
-import React from 'react';
+import React from 'react'
 
 // Import Spectacle Core tags
 import {
@@ -12,42 +12,42 @@ import {
   Quote,
   Slide,
   Text,
-} from 'spectacle';
+  CodePane
+} from 'spectacle'
 
 // Import theme
-import createTheme from 'spectacle/lib/themes/default';
+import createTheme from 'spectacle/lib/themes/default'
 
 // Require CSS
-require('normalize.css');
+require('normalize.css')
 
 const theme = createTheme(
   {
     primary: 'white',
     secondary: '#1F2022',
     tertiary: '#03A9FC',
-    quartenary: '#CECECE',
+    quartenary: '#CECECE'
   },
   {
     primary: 'Montserrat',
-    secondary: 'Helvetica',
+    secondary: 'Helvetica'
   }
-);
+)
 
 export default class Presentation extends React.Component {
   render() {
+    console.log(introCode)
     return (
       <Deck
         transition={['zoom', 'slide']}
         transitionDuration={500}
         theme={theme}
+        progress="none"
       >
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-            Spectacle Boilerplate
+        <Slide transition={['zoom']} bgColor="tertiary">
+          <Heading size={1} fit lineHeight={1} textColor="primary">
+            JavaScript: You Can Do Anything
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text>
         </Slide>
         <Slide transition={['fade']} bgColor="tertiary">
           <Heading size={6} textColor="primary" caps>
@@ -90,6 +90,6 @@ export default class Presentation extends React.Component {
           </BlockQuote>
         </Slide>
       </Deck>
-    );
+    )
   }
 }

@@ -1,0 +1,38 @@
+/**
+ * TODO Stop randomly mixing JavaScripts 6 (yes seriously, 6)
+ * different ways to declare a function
+ */
+const Aircraft = {
+  /**
+   * TODO implement the part where we avoid
+   * a crash (units in the field aren't doing
+   * well)
+   */
+  dont: function() {
+    console.log('all safe')
+  },
+  /**
+   * TODO improve crash detection
+   * (works about 50% of the time
+   * right now so it's not urgent)
+   */
+  goingToCrash: () => {
+    return Math.random() >= 0.5
+  },
+  fly() {
+    setInterval(() => {
+      if (this.goingToCrash()) {
+        this.dont()
+      }
+    }, 1000)
+  }
+}
+
+const Rocket = Object.assign({}, Aircraft, {
+  takeOff: function() {
+    // TODO rocket stuff
+    this.fly()
+  }
+})
+
+Rocket.takeOff()
