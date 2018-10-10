@@ -35,6 +35,12 @@ import asyncAwait from './demos/8-async-await.example.js'
 import domManipulation from './demos/9-dom-manipulation.example.html'
 import domTraversal from './demos/10-dom-traversal.example.html'
 import pureJs from './demos/11-pure-js-app.example.html'
+import manualSplittingA from './demos/12-manual-code-splitting-a.example.js'
+import manualSplittingB from './demos/12-manual-code-splitting-b.example.js'
+import manualSplitting from './demos/12-manual-code-splitting.example.html'
+import esModuleA from './demos/13-es-modules-a.example.js'
+import esModuleB from './demos/13-es-modules-b.example.js'
+import esModule from './demos/13-es-modules.example.js'
 
 require('prism-themes/themes/prism-atom-dark.css')
 
@@ -340,6 +346,49 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit lineHeight={1}>
             4. Organizing Your Code
           </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={6} lineHeight={1}>
+            Manual Code Splitting
+          </Heading>
+          <CodePane lang="javascript" source={manualSplittingA} />
+          <CodePane lang="javascript" source={manualSplittingB} />
+        </Slide>
+        <Slide>
+          <Heading size={6} lineHeight={1}>
+            ...Putting it All Together
+          </Heading>
+          <CodePane lang="html" source={manualSplitting} />
+        </Slide>
+        <Slide>
+          <Heading size={6} lineHeight={1}>
+            ES Modules
+          </Heading>
+          <CodePane lang="javascript" source={esModuleA} />
+          <CodePane lang="javascript" source={esModuleB} />
+          <CodePane lang="javascript" source={esModule} />
+        </Slide>
+        <Slide>
+          <Heading size={1} lineHeight={1}>
+            In Summary...
+          </Heading>
+          <List>
+            <ListItem>
+              There are lots of valid ways to split up your code
+            </ListItem>
+            <ListItem>
+              ES modules are the ideal (and soon to be native) way to do it
+            </ListItem>
+            <ListItem>ES module browser compatibility is OK at best</ListItem>
+            <ListItem>
+              In the meantime, using any mechanism of scope control (such as the
+              "revealing modules" pattern) will help you write fewer bugs
+            </ListItem>
+            <ListItem>
+              If you're brave, you can start using ES modules today with some
+              extra tools
+            </ListItem>
+          </List>
         </Slide>
         <Slide>
           <Heading size={1} fit lineHeight={1}>
