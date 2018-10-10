@@ -141,7 +141,7 @@ module.exports = {
             }
           },
           {
-            test: /\.example\.js$/,
+            test: [/\.example\.js$/, /\.example\.html$/],
             loader: require.resolve('raw-loader')
           },
           // Process JS with Babel.
