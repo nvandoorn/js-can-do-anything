@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <style>
+    </style>
+    <!-- It's important that these get imported in the order they are required -->
+    <script type="text/javascript" src="12-manual-code-splitting-a.example.js"></script>
+    <script type="text/javascript" src="12-manual-code-splitting-b.example.js"></script>
+    <script>
+      let delta = CartModule.addToCart('Juuuul')
+      let customerId = 'juuuul-02'
+      AccountModule.adjustCustomerBalance(customerId, delta)
+      console.log(`Customer has a balance of ${AccountModule.getCustomerBalance(customerId)}`)
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
