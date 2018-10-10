@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <style>
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #clock {
+        font-size: 150px;
+        font-weight: 700;
+        font: Helvetica;
+      }
+    </style>
+    <script>
+      // run this function when the document is loaded
+      window.onload = function() {
+        let clockNode = document.getElementById('clock')
+        // We bind a callback that computes the current time
+        // and then updates the appropriate DOM node
+        function updateTime() {
+          let now = new Date()
+          let formattedTime = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+          clockNode.innerHTML = formattedTime
+        }
+        // setInterval waits one interval before running the callback
+        // so we call it once first
+        updateTime()
+        setInterval(updateTime, 500)
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Semantic HTML is good for you -->
+    <main>
+      <div id="clock">Loading...</div>
+    </main>
+  </body>
+</html>
