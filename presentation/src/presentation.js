@@ -3,19 +3,14 @@ import React from 'react'
 
 // Import Spectacle Core tags
 import {
-  BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem as SListItem,
   List,
-  Quote,
   Slide,
   Text,
   CodePane,
   Image,
-  Fit,
-  Layout,
   Link
 } from 'spectacle'
 
@@ -27,6 +22,7 @@ import me from './images/me.jpg'
 import moth from './images/moth.jpg'
 import ie from './images/ie.png'
 import guy from './images/guy.png'
+import htmlTree from './images/html-tree.png'
 
 import es5Class from './demos/1-es5-class.example.js'
 import es6Class from './demos/2-es6-class.example.js'
@@ -35,6 +31,10 @@ import anonCallbacks from './demos/4-anonymous-functions-callbacks.example.js'
 import syncAsync from './demos/5-sync-async.example.js'
 import callbackHell from './demos/6-callback-hell.example.js'
 import promiseExample from './demos/7-promises.example.js'
+import asyncAwait from './demos/8-async-await.example.js'
+import domManipulation from './demos/9-dom-manipulation.example.html'
+import domTraversal from './demos/10-dom-traversal.example.html'
+import pureJs from './demos/11-pure-js-app.example.html'
 
 require('prism-themes/themes/prism-atom-dark.css')
 
@@ -154,7 +154,7 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={1} fit lineHeight={1}>
             1. Runtime Environment and Language Spec
-            <Image src={ie} width="100px" alt="The Original Villian" />
+            <Image src={ie} width="100px" alt="The Original Villain" />
           </Heading>
         </Slide>
         <Slide>
@@ -225,9 +225,116 @@ export default class Presentation extends React.Component {
           <CodePane lang="javascript" source={promiseExample} />
         </Slide>
         <Slide>
+          <Heading size={6} lineHeight={1}>
+            Async Await
+          </Heading>
+          <CodePane lang="javascript" source={asyncAwait} />
+        </Slide>
+        <Slide>
+          <Heading size={1} lineHeight={1}>
+            In Summary...
+          </Heading>
+          <List>
+            <ListItem>
+              Async code will always be a little painful: you're doing something
+              really complex
+            </ListItem>
+            <ListItem>
+              Anonymous functions are great for when you need to pass a
+              callback, but will never use it again
+            </ListItem>
+            <ListItem>
+              Promises can make async code dramatically easier to understand,
+              but callbacks aren't going away, so get comfortable with both
+            </ListItem>
+            <ListItem>
+              async/await is a sweet taste of the future, but do your homework
+              before using it
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
           <Heading size={1} fit lineHeight={1}>
             3. Interacting With the Page: The DOM API
           </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} fit lineHeight={1}>
+            Document Object Model (DOM)
+          </Heading>
+          <Image height="400px" src={htmlTree} alt="HTML tree model" />
+          <List>
+            <ListItem>
+              In essence, HTML is a tree of text and user interface components
+            </ListItem>
+            <ListItem>
+              The functions provided by the DOM let you analyze and modify this
+              tree
+            </ListItem>
+            <ListItem>The DOM API has evolved a lot recently</ListItem>
+            <ListItem>
+              This means frameworks focused around the DOM (jQuery) are no
+              longer a requirement
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={6} lineHeight={1}>
+            Building a Clock
+          </Heading>
+          <CodePane lang="html" source={domManipulation} />
+        </Slide>
+        <Slide>
+          <Heading size={6} lineHeight={1}>
+            Iterating Over Nodes
+          </Heading>
+          <CodePane lang="html" source={domTraversal} />
+        </Slide>
+        <Slide>
+          <Heading size={6} lineHeight={1}>
+            Pure JS App
+          </Heading>
+          <CodePane lang="html" source={pureJs} />
+        </Slide>
+        <Slide>
+          <Heading size={1} fit lineHeight={1}>
+            Is the DOM API alone sufficient for production apps?
+          </Heading>
+        </Slide>
+        <Slide bgColor="panic">
+          <Heading size={1} fit lineHeight={1}>
+            Depends on your patience and time budget ⏳
+          </Heading>
+        </Slide>
+        <Slide bgColor="panic">
+          <Heading size={6} lineHeight={1}>
+            Frameworks like React, Angular, and Vue exist to solve this issue,
+            but they introduce their own tradeoffs, so don't expect a magic
+            bullet
+          </Heading>
+        </Slide>
+        <Slide>
+          <Heading size={1} lineHeight={1}>
+            In Summary...
+          </Heading>
+          <List>
+            <ListItem>
+              The DOM does an excellent job of adding small interactions to
+              otherwise static pages
+            </ListItem>
+            <ListItem>
+              The DOM offers useful functions to query and traverse your HTML
+              tree
+            </ListItem>
+            <ListItem>
+              With some fancy footwork, you can build your entire app with just
+              the DOM API
+            </ListItem>
+            <ListItem>
+              ...but it gets painful pretty fast, so investing time into
+              learning a framework may pay off quickly
+            </ListItem>
+          </List>
         </Slide>
         <Slide>
           <Heading size={1} fit lineHeight={1}>
