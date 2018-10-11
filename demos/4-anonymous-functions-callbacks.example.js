@@ -1,6 +1,10 @@
 // Named function
 function getArticles() {}
 
+// Named function that accepts
+// a callback argument.
+// We use this function to demo
+// callback styles
 function getPlaylist(callback) {
   callback(null, ['Yandhi', 'oh wait shit nevermind'])
 }
@@ -9,7 +13,13 @@ function getPlaylist(callback) {
 // Usually anonymous functions
 // are passed as arguments
 // to async functions
-getPlaylist(function(err, res) {})
+getPlaylist(function(err, res) {
+  if (err) {
+    console.err(err)
+  } else {
+    console.log(res.join('👏🏼'))
+  }
+})
 
 // You can also name anonymous functions
 // and refer to it by name
