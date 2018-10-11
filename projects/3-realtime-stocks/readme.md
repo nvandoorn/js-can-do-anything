@@ -1,5 +1,7 @@
 # 3. Realtime Stocks
 
+[See it live here 📈](https://vigorous-agnesi-4f1912.netlify.com/)
+
 ## Goal
 
 Understand why JS frameworks and tools are so common in production. Showcase of some functional programming techniques.
@@ -8,7 +10,7 @@ Understand why JS frameworks and tools are so common in production. Showcase of 
 
 This template demonstrates a basic React app with a single (and fake) source of data. Stock data is updated in near realtime, and the page will update accordingly. I was hoping to get a real stock API to use but most of them are paid unfortunately.
 
-### Expansion Ideas
+## Expansion Ideas
 
 - Wire it up to a real stock API
 - Show a few different stocks
