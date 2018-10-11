@@ -176,7 +176,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide>
           <Heading size={6} lineHeight={1}>
-            var, let, const
+            Variable Scoping
           </Heading>
           <CodePane lang="javascript" source={varLetConst} />
         </Slide>
