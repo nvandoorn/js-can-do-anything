@@ -9,7 +9,7 @@ import {
   List,
   Slide,
   Text,
-  CodePane,
+  CodePane as SCodePane,
   Image,
   Link
 } from 'spectacle'
@@ -60,6 +60,7 @@ const theme = createTheme(
 )
 
 const ListItem = p => <SListItem margin="0 0 20px 0" textSize="1.2em" {...p} />
+const CodePane = p => <SCodePane theme="external" {...p} />
 
 export default class Presentation extends React.Component {
   render() {
