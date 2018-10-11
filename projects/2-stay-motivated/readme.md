@@ -1,5 +1,7 @@
 # 2. Stay Motivated
 
+[See it live here 🔥](https://pedantic-pare-47de7c.netlify.com)
+
 ## Goal
 
 Understand the idea of building a front-end app that relies on JS with minimal dependency on the HTML

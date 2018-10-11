@@ -1,5 +1,7 @@
 # 1. Colour Shift
 
+[See it live here 💅🏼](https://focused-booth-220b2f.netlify.com)
+
 ## Goal
 
 Get familiar with how the DOM API works in the context of static HTML with some JS.
