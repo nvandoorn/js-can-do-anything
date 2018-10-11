@@ -9,17 +9,22 @@ function computeRgb(x, y, width, height) {
 // This will be an array of nodes since we are
 // using class name (array may have length 0 or 1)
 let attentionNodes
+// Make sure we wait until the page is ready.
+// Querying the DOM before the page is ready
+// will result in queries returning null/empty array
 window.onload = function() {
-  document.getElementsByClassName('attention')
+  attentionNodes = document.getElementsByClassName('attention')
 }
 document.onmousemove = function(event) {
-  // iterate over each node and update its style
+  // calculate the color once (will be used
+  // for all nodes)
   let color = computeRgb(
     event.pageX,
     event.pageY,
     window.innerWidth,
     window.innerHeight
   )
+  // iterate over each node and update its style
   for (let node of attentionNodes) {
     node.style.color = color
   }
