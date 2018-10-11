@@ -35,14 +35,14 @@ export const charJsConfig = {
 // Take our data and transform it
 // the format required by chart.js.
 // We also mix in some color options
-export function normalizeData(data, label) {
+export function normalizeData(data, label, backgroundColor) {
   return {
     datasets: [
       {
         label,
         data: data.map(k => ({ x: k.datetime, y: k.value })),
         pointBackgroundColor: CHART_POINT_COLOR,
-        backgroundColor: CHART_BACKGROUND_COLOR
+        backgroundColor
       }
     ]
   }
@@ -53,12 +53,16 @@ export function normalizeData(data, label) {
 // we need. State is managed by this components parent,
 // and then passed down as props
 export function Stock(props) {
-  const normalizedData = normalizeData(props.data, props.label)
+  const normalizedData = normalizeData(
+    props.data,
+    props.label,
+    props.backgroundColor
+  )
   // don't return a component if we're
   // missing the required data prop
-  console.log(props.data)
   return props.data ? (
     <section>
+      <figcaption>💵trillion💰</figcaption>
       <LineChart data={normalizedData} options={charJsConfig} />
     </section>
   ) : null
