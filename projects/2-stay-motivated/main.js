@@ -55,7 +55,6 @@ window.onload = function() {
   formNode.addEventListener('keydown', function(event) {
     if (event.key == 'Enter') {
       form = makeForm(formNode.value)
-      console.log()
       mountGrid(rootNode, form.template + grid.template, grid.ids)
     }
   })
