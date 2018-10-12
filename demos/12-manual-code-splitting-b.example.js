@@ -1,3 +1,4 @@
+// 12-manual-code-splitting-b.example.js
 let AccountModule = (function() {
   let customerBalance = {}
   return {

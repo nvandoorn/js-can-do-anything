@@ -1,3 +1,4 @@
+// 12-manual-code-splitting-a.example.js
 const COST_OF_ITEM = 15
 // We use this immediately invoked anonymous function
 // to create a private, non global scope (usually called a module).
